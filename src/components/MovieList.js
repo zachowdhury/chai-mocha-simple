@@ -9,7 +9,8 @@ export default class MovieList extends Component{
  
     render(){
         const ourVal = "This is link to movie database";
-const database = this.dataset;
+        const database = this.dataset;
+        
         return(
             <div>
                 <h2>Table of Movies </h2>
@@ -25,6 +26,10 @@ const database = this.dataset;
         );
     }
  
+    makeCharts(data){
+        
+    }
+    
     printMovieList ( data ){        
         // this could be anotehr component data passed to by properties 
         // user here redux as we are moving towards update, and patch

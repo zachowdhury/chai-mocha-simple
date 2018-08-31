@@ -4,8 +4,8 @@ React application.
 Clone project, run nmp install.
 This will install all dependancies needed.
 How to Install mocha and chai :
-´´´sh
+```sh
 npm install -g mocha --save-dev 
 npm install chai --save-dev
-´´´
+```
 

@@ -11,7 +11,10 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers'
 import logger from 'redux-logger'
 
+import {updateData} from  './reducers/user';
 const store = createStore( rootReducer, applyMiddleware(logger));
+window.updateData = updateData;
+window.store= store;
 // this  function Index = App module 
 const Index = () => {   
     return(

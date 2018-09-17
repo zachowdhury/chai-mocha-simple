@@ -53,7 +53,7 @@ export default class Login extends  Component{
                        {/* // <HelpBlock>Validation is based on string length.</HelpBlock> */}
                         </FormGroup>
                         <Button> Login Here</Button>
-                        <button onClick={this.handleClick}>clicke console</button>
+                        <button onClick={this.handleClick}>Console Store</button>
                     </form>
                 </div>
         );

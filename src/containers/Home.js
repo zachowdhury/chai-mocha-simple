@@ -60,6 +60,7 @@ export default class Home extends Component {
     }
     clearRead(obj){
         obj.map ((e,i)=>{
+        <li>e</li>;
 
         });
 

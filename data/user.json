@@ -1,0 +1,37 @@
+{
+    "Employees" : [
+    {
+    "userId":"zahid",
+    "jobTitleName":"Developer",
+    "firstName":"zahid",
+    "lastName":"chowdhury",
+    "preferredFullName":"Zahid A. chowdhury",
+    "employeeCode":"E1",
+    "password":"password",
+    "phoneNumber":"408-1234567",
+    "emailAddress":"zahid.chowdhury@gmail.com"
+    },
+    {
+    "userId":"nirani",
+    "jobTitleName":"Developer",
+    "firstName":"Neil",
+    "lastName":"Irani",
+    "preferredFullName":"Neil Irani",
+    "employeeCode":"E2",
+    "password":"password",
+    "phoneNumber":"408-1111111",
+    "emailAddress":"neilrirani@gmail.com"
+    },
+    {
+    "userId":"thanks",
+    "jobTitleName":"Program Directory",
+    "firstName":"Tom",
+    "lastName":"Hanks",
+    "preferredFullName":"Tom Hanks",
+    "employeeCode":"E3",
+    "password":"password",
+    "phoneNumber":"408-2222222",
+    "emailAddress":"tomhanks@gmail.com"
+    }
+]
+}

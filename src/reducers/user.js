@@ -1,7 +1,7 @@
 
 const LOAD_USER =       'chai/analysis/LOAD_USER'
 const LOAD_USER_FAIL=   '/chai/analysis/LOAD_USER_FAIL'
-const UPDATE_USER =  '/chai/analysis/UPDATE_USER'
+const ADD_USER =  '/chai/analysis/ADD_USER'
 
 const initialState ={
     count :1,
@@ -15,24 +15,23 @@ const initialState ={
         case 'LOAD_USER':
         return state.users;
 
-        case 'UPDATE_USER':        
-       
+        case 'ADD_USER':        
         return Object.assign({},...state,payload);
            
         case 'LOAD_USER_FAIL':
         return state.error ;
    
         default :
-        return state.users;
+        return state;
       
     }
    
    }
 
-   export function updateData (data){
+   export function updateUser (data){
    
     return{
-        type:[UPDATE_USER],
+        type:[ LOAD_USER, ADD_USER ],
         payload : data
     };
    }

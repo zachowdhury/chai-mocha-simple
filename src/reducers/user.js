@@ -16,7 +16,7 @@ const initialState ={
         return state.users;
 
         case 'ADD_USER':        
-        return Object.assign({},...state,payload);
+        return [...state, action.payload];
            
         case 'LOAD_USER_FAIL':
         return state.error ;
@@ -28,10 +28,10 @@ const initialState ={
    
    }
 
-   export function updateUser (data){
+   export function updateUser (){
    
     return{
         type:[ LOAD_USER, ADD_USER ],
-        payload : data
+        payload : 'what '
     };
    }

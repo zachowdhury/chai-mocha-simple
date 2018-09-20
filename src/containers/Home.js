@@ -3,10 +3,10 @@ import Login from '../components/Login';
 import { connect }from 'react-redux';
 import axios from 'axios';
 import { updateUser } from '../reducers/user'
+import {upVote } from '../reducers/movie';
 export default class Home extends Component {
     constructor(props){
         super ( props);
-
         this.fetchFlueData = this.fetchFlueData.bind(this);
         this.greetText = this.greetText.bind( this);
         this.clearRead =  this.clearRead.bind(this);
@@ -17,26 +17,31 @@ export default class Home extends Component {
     
     }
     componentDidMount(){
-
-        console.log ('HomePage props on didMoount',this.props);
+{console.log('props here',this.upVote)}
     }
+    
+  
     
     render(){
         if ( this.state.hasErrored) return <p>Some error has occured</p>;    
         if (this.state.isLoading) return <p>....Loadiing</p>;
-        const userData = this.state.response.data; 
+        const { firstAction }  = this.props;
+        const userData = this.state.users.data; 
         return ( 
             <div>
                 {this.greetText()}
                 <p>{this.props.text}</p>
                         <button className='button' 
-                        onClick ={this.fetchFlueData}> Fetch Flue data >> 
+                        onClick ={this.fetchFlueData}> Fetch Flue data>> 
                         </button>
                 <Login/>
-                {/* {console.dir(userData)} */}
+                <button className="button"
+                onClick={firstAction}>jere 
+                </button>
+                {console.log('props',this.props)}
                 clear read:
-                {this.simpleList()}
-            {/* {console.log(this.clearRead(userData))} */}
+            
+            
             </div>
         );
     }
@@ -60,31 +65,15 @@ export default class Home extends Component {
                     } 
             }));
     }
-    // clearRead(data=[1,2,3,4,5]){
+    clearRead(data){
         
-    //  let _d = data.map ((e)=>{
-    //     return <p>e</p>;
-
-    //     });
-    //     return _d;
-
-    // }
-
-    simpleList ( ){
-        const numbers = [1, 2, 3, 4, 5];
-        const listItems = numbers.map((number) =>
-        <li key={number.toString()}>
-            {number}
-        </li>
-        );
-        return listItems;
-    }
+     let _d = data.map ((e)=>{ return <p>{e}</p>; });
+        return _d;
+        }
 
     greetText (){
         return(
-            this.login 
-                ? <p>you are loged in as USer.</p>
-                : <p> you are logged in as Guest</p>
+            this.login ? <p>you are loged in as USer.</p> : <p> you are logged in as Guest</p>
             );
         }
         
@@ -94,13 +83,21 @@ return {
     users:state.users.data
 };
 }
+const mapDispatchToProps = dispatch => {
+    return {
+      updateUser: () =>
+        dispatch({
+          type: 'ADD_USER'
+        })
+    };
+  }
 
 
 
-function mapActionToDispatch(dispatch){
+function _mapDispatchToProps(dispatch){
     return{
+        firstAction:()=>dispatch(updateUser())
 
     };
 }
-connect(mapStateToProps, 
-    dispatch=>dispatch(updateUser(this.userData)))(Home);
+connect((state )=> state,mapDispatchToProps)(Home)

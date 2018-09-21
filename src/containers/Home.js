@@ -4,6 +4,7 @@ import { connect }from 'react-redux';
 import axios from 'axios';
 import { updateUser } from '../reducers/user'
 import {upVote } from '../reducers/movie';
+import TilesCard from '../components/TilesCard'
 export default class Home extends Component {
     constructor(props){
         super ( props);
@@ -42,7 +43,7 @@ export default class Home extends Component {
                 </button>
                 {console.log('props',this.props)}
                 clear read:{this.myval}
-            
+            <TilesCard />
             
             </div>
         );

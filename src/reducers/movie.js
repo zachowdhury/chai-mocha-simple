@@ -3,7 +3,6 @@ const LOAD_MOVIE =       'chai/analysis/LOAD_MOVIE'
 const ADD_DATA =        '/chai/analysis/ADD_DATA'
 const LOAD_FAIL=   '/chai/analysis/LOAD_FAIL'
 const COUNT_DOWN = '/analysis/COUNT_DOWN';
-const NEW_TIME = '/analysis/NEW:TIME';
 
 const initialState ={
     count :1,
@@ -15,9 +14,7 @@ const initialState ={
     switch ( action.type){
 
 
-        case 'NEW_TIME':
-        return state.payload;
-
+     
         case 'COUNT_UP':
         return state+1;
         
@@ -47,8 +44,5 @@ const initialState ={
            payload:count
 
        });
-    export const fetchNewTime =()=>({
-type : NEW_TIME,
-payload: new Date().toString(),
-    });
+
    

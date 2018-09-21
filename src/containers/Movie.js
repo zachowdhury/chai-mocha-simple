@@ -1,7 +1,8 @@
 import React, { Component }from 'react';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
-import { upVote, addData,fetchNewTime, initialState } from '../reducers/movie';
+import { upVote, addData,  } from '../reducers/movie';
+import { fetchNewTime ,initialState} from '../reducers/time';
 export default class Movie extends Component {
 
     constructor (props){
@@ -9,9 +10,11 @@ export default class Movie extends Component {
      
         this.createMovie= this.createMovie.bind(this);
         this.counterUp = this.counterUp.bind(this);
-        const data  ={
+        
+        this.state  ={
             name:"zahid",
-            age:33
+            age:33,
+            currentTime: new Date().toDateString(),
         };
     }
     componentDidMount(){
@@ -19,14 +22,17 @@ export default class Movie extends Component {
         console.dir(this);
         console.log ('this dispatch :'+{...this.props.counter},'\nthisdata: '+ this.props.initialState);
     }
-
-
+    
     render(){   
-      
+     const    nowTime = new Date().toString();
 
         return (
             <div> 
                 <h1>Movie Page</h1>
+
+                    <p> 
+                       <b>Time : {this.props.currentTime} </b>
+                    </p> 
 
                 <p> here test the Dux</p>
                     <Button variant="contained" 
@@ -39,15 +45,15 @@ export default class Movie extends Component {
                     onClick= {this.createMovie}>
                         Counter-Up>
                     </Button>
-                    Time : {this.state.counter}
+                  
             </div>        
         );
     }
+    /*** */
     createMovie(){
-    console.log ('State provided',this.state);
+    console.log ('State provided',this.state.currentTime);
     }
-    
-
+    /** */
     counterUp(){
         let x =1;
          console.log ( x+=1);
@@ -59,5 +65,13 @@ const mapDispatchToProps = dispatch => ({
     
 
 })
- 
-connect (state=>state,mapDispatchToProps )(Movie);
+ const mapStateToProps =(state)=>{
+     return{
+         currentTime: state.currentTime
+        };
+
+ }
+connect ( 
+    mapStateToProps, 
+    mapDispatchToProps 
+    )(Movie);

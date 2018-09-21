@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import analysis from './analysis';
 import users from './user';
-import movie from './movie';
+import time from './time';
 
   const  rootReducer = combineReducers({
-    users,
-    movie
+    time,
+    
   })
 export default rootReducer;

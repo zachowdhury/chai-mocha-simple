@@ -8,13 +8,14 @@ import Footer from './components/Footer';
 
 import {createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import {initialState} from './reducers';
 import rootReducer from './reducers'
 import logger from 'redux-logger'
 
 // import {updateUser} from  './reducers/user';
 const store = createStore( rootReducer, 
-    applyMiddleware(logger));
-//  window.updateUser = updateUser;
+    applyMiddleware(logger), initialState);
+// window.updateUser = updateUser;
 // window.store= store;
 // this  function Index = App module 
 const Index = () => {   
@@ -29,11 +30,11 @@ const Index = () => {
 
 ReactDOM.render (
     (
-<Provider store= {store}>
+        <Provider store= {store}>
 
-    <BrowserRouter>
-        <Index /> 
-    </BrowserRouter>
-</Provider>
+            <BrowserRouter>
+                <Index /> 
+            </BrowserRouter>
+        </Provider>
 ),document.getElementById('index')
 );

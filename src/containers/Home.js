@@ -14,15 +14,17 @@ export default class Home extends Component {
         this.state = {
             users:[],
         };
-    
+        this.myval = 'shti';
     }
     componentDidMount(){
-{console.log('props here',this.upVote)}
+        {console.log('props here',this.upVote)}
     }
     
   
     
     render(){
+
+      
         if ( this.state.hasErrored) return <p>Some error has occured</p>;    
         if (this.state.isLoading) return <p>....Loadiing</p>;
         const { firstAction }  = this.props;
@@ -39,7 +41,7 @@ export default class Home extends Component {
                 onClick={firstAction}>jere 
                 </button>
                 {console.log('props',this.props)}
-                clear read:
+                clear read:{this.myval}
             
             
             </div>

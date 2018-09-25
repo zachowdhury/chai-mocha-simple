@@ -12,18 +12,18 @@ export default class TilesCard extends Component {
         return(
             <div className ="class-component">
             <CardContent>
-                <Typography className={classes.title} color="textSecondary">
+                <Typography className={''} color="textSecondary">
                 Word of the Day
                 </Typography>
                 <Typography variant="headline" component="h2">
                     be
-                    {bull}
+                    {}
                     nev
-                    {bull}o{bull}
+                    {}o{}
                     lent
                 </Typography>
                 
-                <Typography className={classes.pos} color="textSecondary">
+                <Typography className={''} color="textSecondary">
                 adjective
                 </Typography>
                 

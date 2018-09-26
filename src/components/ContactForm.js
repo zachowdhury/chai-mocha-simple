@@ -18,7 +18,6 @@ export  class ContactForm extends Component {
                 <div>
                   <form onSubmit={ handleSubmit}>
                   
-                  
                         <div>
                           <label htmlFor="firstName">First Name</label>
                           <Field name="firstName" component="input" type="text"/>

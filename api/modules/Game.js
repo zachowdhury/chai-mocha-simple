@@ -3,7 +3,7 @@
 
 // @@ logical statements 
 
-export default function fizbuzzLogic(numbers){
+export default async function fizbuzzLogic(numbers){
   //var numbers=[];
   //var comment = "";
  //var numbers= [5,6,9,87,5];
@@ -28,10 +28,10 @@ export default function fizbuzzLogic(numbers){
  return results;
 }
 // @@
-export function multiply(x,y){
-    return {result: x*y};
+export async function multiply(x,y){
+    return {multiply: x*y};
 }
 // @@
-export function fizbuzIntro(){
+export async function fizbuzIntro(){
     console.log ('game start');
 }

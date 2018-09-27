@@ -11,9 +11,6 @@ knexfile.js
 ehthumbs.db
 Thumbs.db
 
-
-
-
 *.com
 *.class
 *.dll

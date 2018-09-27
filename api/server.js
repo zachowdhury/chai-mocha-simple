@@ -1,11 +1,20 @@
 import express from 'express';
-// @@ Routes
+import bodyParser from 'body-parser'
+require('dotenv').config();
+// @@ db
+import _knex from 'knex';
+import _knexConfig from '../knexfile';
+// @@ initialize knex
+import { Model } from 'objection';
+// @@ routes
 import GameRoute from './routes/GameRoute'
+import UserRoute from './routes/UserRoute';
 
-
-const env = {
-    HOST : '192.168.68.101',
-    PORT :3030,
+const dbObject  = _knex(_knexConfig.development);
+Model.knex(dbObject);
+const serverEnv = {
+    HOST : '192.168.68.101' || process.env.HOST ,
+    PORT :3030 || process.env.PORT,
 
 }
 
@@ -20,9 +29,10 @@ app.use((req,res,next)=>{
 
 // List of Routes 
 GameRoute(app);
+UserRoute(app);
 
 // server on port 
-app.listen(env.PORT, ()=>{
-    console.log (`Server Started on port :${env.PORT}`);
+app.listen(serverEnv.PORT, ()=>{
+    console.log (`Server Started on: ${serverEnv.HOST}- port :${serverEnv.PORT}`);
 });
 

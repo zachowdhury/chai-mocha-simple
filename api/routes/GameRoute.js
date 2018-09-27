@@ -1,5 +1,5 @@
 
-import  fizbuzzLogic,{ multiply }  from '../modules/Game';
+import  fizbuzzLogic,{ multiply }  from '../modules/GameModule';
 
 
 export default function (app){
